@@ -1,4 +1,4 @@
-const { checkPassword } = require("../helpers");
+const { checkPassword } = require("../helpers/encrypt");
 const { generateToken } = require("../middlewares/jwt");
 
 require("dotenv").config();

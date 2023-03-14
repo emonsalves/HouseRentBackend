@@ -1,10 +1,14 @@
-const express = require('express')
+const { Router } = require('express')
 const { userLogin } = require("../controllers/login");
-const { reporting } = require("../middlewares");
+// const { loginSchema } = require("../models/loginSchema");
+// const { reporting } = require("../middlewares");
 
-const router = express.Router()
+
+const router = Router()
 
 router
-    .post("", reporting, validateBody(loginSchema), userLogin);
+    // .post("", reporting, validateBody(loginSchema), userLogin);
+    .post("", userLogin);
+
 
 module.exports = router

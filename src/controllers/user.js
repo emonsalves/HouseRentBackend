@@ -1,5 +1,5 @@
-const { getUsers, getUser, registerUser } = require("../models/");
-const { encryptPassword } = require("../helpers/");
+const { getUsers, getUser, registerUser } = require("../models/users");
+const { encryptPassword } = require("../helpers/encrypt");
 const jwt = require("jsonwebtoken");
 
 const getAll = async (req, res) => {

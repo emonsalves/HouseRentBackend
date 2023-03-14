@@ -5,4 +5,4 @@ const loginSchema = yup.object().shape({
   password: yup.string().required(),
 });
 
-module.exports = { loginSchema };dd
+module.exports = { loginSchema };
