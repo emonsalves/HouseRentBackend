@@ -7,9 +7,9 @@ const getUsers = async () => {
 };
 
 const registerUser = async (user) => {
-  let { email, password, rol, lenguaje } = user;
-  const values = [email, password, rol, lenguaje];
-  const queryString = "INSERT INTO users VALUES (DEFAULT, $1, $2, $3, $4)";
+  let { rut, name, lastName, email, address, phone, password, idRole, idType, active } = user;
+  const values = [rut, name, lastName, email, address, phone, password, idRole, idType, active];
+  const queryString = "INSERT INTO users VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
   await query(queryString, values);
 };
 
