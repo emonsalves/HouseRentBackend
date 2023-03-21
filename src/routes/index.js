@@ -9,7 +9,7 @@ const cleanFileName = (fileName) => {
     const clean = fileName.split(".").shift()
     return clean
 }
-// carhamos las rutas excepto index
+// cargamos las rutas en relacion a los archivos dentro de esta carpeta excepto index
 fs.readdirSync(PATH_ROUTER).filter(fileName => {
     const prefixRoute = cleanFileName(fileName)
     if (prefixRoute !== "index") {

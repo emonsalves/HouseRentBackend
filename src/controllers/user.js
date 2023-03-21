@@ -16,6 +16,7 @@ const getOne = async (req, res) => {
     const token = req.headers.authorization;
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
     const email = decoded.email;
+    console.log(email)
     const user = await getUser(email);
     res.json(user);
   } catch (error) {
@@ -26,7 +27,7 @@ const getOne = async (req, res) => {
 const addNewUser = async (req, res) => {
   try {
     const user = req.body;
-    user.password = encryptPassword(user.password);
+    user.password = await encryptPassword(user.password);
     await registerUser(user);
     res.send("Usuario creado con éxito");
   } catch (error) {
