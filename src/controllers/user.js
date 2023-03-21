@@ -18,7 +18,8 @@ const getOne = async (req, res) => {
     const email = decoded.email;
     console.log(email)
     const user = await getUser(email);
-    res.json(user);
+    const { password, ...userWithoutPassword } = user;
+    res.json(userWithoutPassword);
   } catch (error) {
     res.status(error.code || 500).send(error);
   }
